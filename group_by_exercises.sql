@@ -17,6 +17,14 @@ FROM employees
 WHERE last_name LIKE '%q%' AND last_name NOT LIKE '%qu%'
 GROUP BY last_name;
 
+-- This will show us the 10 most common hire dates for employees.
+SELECT hire_date, COUNT(*)
+FROM employees
+GROUP BY hire_date
+ORDER BY COUNT(*) DESC
+    LIMIT 10;
+
+
 --  #6 Add a COUNT() to your results and use ORDER BY to make it easier to find employees whose unusual name is shared with others.
 
 SELECT COUNT(*), last_name
